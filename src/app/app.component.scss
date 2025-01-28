@@ -13,4 +13,9 @@
 
 .search-item {
     cursor: pointer;
+
+    &:hover {
+        background-color: #ccc;
+        color: maroon;
+    }
 }
