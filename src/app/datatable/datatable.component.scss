@@ -1,0 +1,17 @@
+table {
+    border: 1px solid #ccc;
+}
+
+tr {
+    cursor: pointer;
+
+    &:hover {
+        background-color: #ccc;
+        color: maroon;
+    }
+
+    &.selected {
+        background-color: #ddd;
+    }
+}
+

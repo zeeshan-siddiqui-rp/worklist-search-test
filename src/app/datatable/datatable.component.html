@@ -1,0 +1,23 @@
+<h2>{{title}}</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th *ngFor="let key of columns$ | async">{{key}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <ng-container *ngFor="let row of data | async">
+            <tr *ngIf="filterValue.length ? row[filterKey].includes(filterValue) : true" (click)="onRowClick(row)" [class.selected]="selectedRow === row">
+                <td *ngFor="let key of columns$ | async">{{row[key]}}</td>
+            </tr>
+        </ng-container>
+        <tr *ngIf="filterValue.length">
+            <td [attr.colspan]="(columns$ | async)?.length">
+                Rows hidden: {{ hiddenRowCount$ | async }}
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<ng-content *ngIf="selectedRow"></ng-content>

@@ -1,0 +1,16 @@
+#container {
+    display: flex;    
+}
+
+#sidebar {
+    padding: 10px;
+}
+
+#body {
+    flex: 1;
+    padding: 10px;    
+}
+
+.search-item {
+    cursor: pointer;
+}
